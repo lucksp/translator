@@ -16,15 +16,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/Public'));
 
 // Routes \\
-app.get('/', function(req, res){
+app.get("/", function(req, res){
   res.sendFile("index.html", {root: "./Public/html"})
 });
 
-
-googleTranslate.translate('Your mother was a hampster', 'es', function(err, translation) {
- console.log(translation.translatedText);
- // =>  Mi nombre es Brandon
+app.get("/quiz", function(req, res){
+	res.sendFile("quiz.html", {root: "./Public/html"})
 })
+
+app.get("/progress", function(req, res){
+	res.sendFile("progress.html", {root:"./Public/html"})
+})
+
+// googleTranslate.translate('Your mother was a hampster', 'es', function(err, translation) {
+//  console.log(translation.translatedText);
+//  // =>  Mi nombre es Brandon
+// })
 
 app.get('/translate', translateCtrl.getTranslator)
 
