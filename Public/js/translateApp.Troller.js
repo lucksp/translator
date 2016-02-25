@@ -1,6 +1,8 @@
 
 angular.module('translateApp')
-	.controller('translateTroller', ['$scope', '$http', function ($scope, $http){
+	.controller('translateTroller', ['$scope', '$http', 'translateFactory', function ($scope, $http, translateFactory){
+
+		console.log(translateFactory.languageCodes[0].id)
 
 	$scope.translate = function(){
 		$http.post('/trans', $scope.translateText)

@@ -1,7 +1,6 @@
 // Data Controller
 var fs = require('fs')
 var ApiKey = fs.readFileSync('apiKey.txt', 'utf-8')
-console.log("ApiKey:",ApiKey)
 // Require model
 
 var DataModel = require('../models/translate.server.Model.js')
