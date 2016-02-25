@@ -5,7 +5,7 @@ angular.module('translateApp')
 	$scope.translate = function(){
 		$http.post('/trans', $scope.translateText)
 			.then(function(returnData){
-				$scope.translateText = returnData.data
+				$scope.translatedText = returnData.data
 			})
 		
 		// $http.get('/trans')
