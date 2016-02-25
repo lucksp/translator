@@ -1,25 +1,21 @@
 // Data Controller
-
+var fs = require('fs')
+var ApiKey = fs.readFileSync('apiKey.txt', 'utf-8')
+console.log("ApiKey:",ApiKey)
 // Require model
+
 var DataModel = require('../models/translate.server.Model.js')
+var googleTranslate = require('google-translate')(ApiKey);
 
-// Get Data
-var getTranslator = function(req, res){
-	googleTranslate.translate('My name is Brandon', 'es', function(err, translation) {
-	  console.log(translation.translatedText);
-	res.send(DataModel.getTranslator);
-	}
-)}
+function transData (req, res){
+	console.log(req.body)
+	googleTranslate.translate(req.body.text, 'es', function(err, translation) {
+			console.log(err)
 
-// Create Data
-// var createData = function(req, res){
-// 	// Data from client -> req.body
-// 	new DataModel.ObjectNameGoesHere(req.body)
-// 	res.send('word!!!!!')
-	
-// }
+	 res.send(translation.translatedText)
+	})
+}
 
 module.exports = {
-	getTranslator : getTranslator,
-	// createData : createData
+	transData : transData,
 }

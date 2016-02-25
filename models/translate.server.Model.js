@@ -1,17 +1,10 @@
 // Data Model
+var mongoose = require("mongoose")
 
-var dataArray = [
-	{
-		name : '',
-	}
-]
 
-var ObjectNameGoesHere = function(data){
-	this.name = fruitInfo.name
-	placeholder.push(this)
-}
+var textSchema = mongoose.Schema({
+	text: String,
+})
 
-module.exports = {
-	ObjectNameGoesHere : ObjectNameGoesHere,
-	dataArray : dataArray
-}
+
+module.exports = mongoose.model("Text", textSchema)
