@@ -3,12 +3,12 @@ var fs = require('fs')
 var ApiKey = fs.readFileSync('apiKey.txt', 'utf-8')
 // Require model
 
-var DataModel = require('../models/translate.server.Model.js')
+// var DataModel = require('../models/translate.server.Model.js')
 var googleTranslate = require('google-translate')(ApiKey);
 
 function transData (req, res){
 	console.log(req.body)
-	googleTranslate.translate(req.body.text, 'es', function(err, translation) {
+	googleTranslate.translate(req.body.text, req.body.fromLang, req.body.toLang, function(err, translation) {
 			console.log(err)
 
 	 res.send(translation.translatedText)

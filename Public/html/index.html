@@ -11,7 +11,7 @@
 	    <a class="nav-link active" href="/">Translate</a>
 	  </li>
 	  <li class="nav-item">
-	    <a class="nav-link" href="/quiz">Quiz</a>
+	    <a class="nav-link" href="/login">Quiz</a>
 	  </li>
 	  <li class="nav-item">
 	    <a class="nav-link" href="/progress">Progress</a>
@@ -22,24 +22,8 @@
 <div class="container">
 	<form class="form-group" ng-submit="translate()">
 		<select ng-options="codes.id as codes.language for codes in languageCodes track by codes.id" class="form-control initLang"  ng-model="translateText.fromLang">
-
-<!-- WE HAD:
-		<select ng-options="languageCodes.id as languageCodes.language for language in languageCodes.language" class="form-control initLang"  ng-model="translateText.fromLang">
-		<option>{{languageCodes.language}}</option>
-
-NOW ENTER OUTPUT HERE:	 -->	
-		  <!-- <option>English</option>
-		  <option>Spanish</option>
-		  <option>French</option>
-		  <option>Chinese</option>
-		  <option>Japanese</option> -->
 		</select>
-		<select class="form-control transLang">
-		  <option>English</option>
-		  <option>Spanish</option>
-		  <option>French</option>
-		  <option>Chinese</option>
-		  <option>Japanese</option>
+		<select ng-options="codes.id as codes.language for codes in languageCodes track by codes.id" ng-model="translateText.toLang" class="form-control transLang">
 		</select>
 		<input type="textarea" class="form-control" id="exampleInputName2" ng-model="translateText.text" placeholder="Insert Your Text Here">
 		<button type="submit" class="btn btn-info">Translate</button>
