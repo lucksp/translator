@@ -21,8 +21,13 @@
 <!-- TRANSLATE FORM -->
 <div class="container">
 	<form class="form-group" ng-submit="translate()">
+		<select ng-options="codes.id as codes.language for codes in languageCodes track by codes.id" class="form-control initLang"  ng-model="translateText.fromLang">
+
+<!-- WE HAD:
 		<select ng-options="languageCodes.id as languageCodes.language for language in languageCodes.language" class="form-control initLang"  ng-model="translateText.fromLang">
 		<option>{{languageCodes.language}}</option>
+
+NOW ENTER OUTPUT HERE:	 -->	
 		  <!-- <option>English</option>
 		  <option>Spanish</option>
 		  <option>French</option>
