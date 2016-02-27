@@ -18,60 +18,59 @@
 	  </li>
 	</ul> <!-- END NAV -->
 	<div class="container">
+		<div class="row col-sm-6">
 		<h3>What Language Would You Like To Study?</h3>
-		<form class="form-group">
-		<select class="form-control langLearn">
-			  <option>English</option>
-			  <option>Spanish</option>
-			  <option>French</option>
-			  <option>Chinese</option>
-			  <option>Japanese</option>
+			<form class="form-group">
+			<select ng-options="codes.id as codes.language for codes in languageCodes track by codes.id" class="form-control initLang"  ng-model="translateText.fromLang">
 			</select>
-		</form>
+			<button type="submit" class="btn btn-info">Use This Language</button>
+			</form>
+		</div>
 	</div>
 	<div class="container">
-		<form class="form-horizontal">
+		<form class="form-horizontal" ng-submit="submitQuiz(words)">
 			<div class="form-group">
-				<label class="col-sm-2 control-label">1. Monkey</label>
+				<label class="col-sm-6 control-label" ng-repeat="words in quizWords">{{words.word}}
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang">
+				</label>
+				<p>{{TranslatedText}}</p>
+			</div>
+
+<!-- 				<label class="col-sm-2 control-label">2. Discuss</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
-				</div>
-				<label class="col-sm-2 control-label">2. Discuss</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang2">
 				</div>
 				<label class="col-sm-2 control-label">3. Code</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang3">
 				</div>
 				<label class="col-sm-2 control-label">4. Stupid</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang4">
 				</div>
 				<label class="col-sm-2 control-label">5. Defer</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang5">
 				</div>
 				<label class="col-sm-2 control-label">6. Zealous</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang6">
 				</div>
 				<label class="col-sm-2 control-label">7. Tact</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang7">
 				</div>
 				<label class="col-sm-2 control-label">8. Frustrate</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang8">
 				</div>
 				<label class="col-sm-2 control-label">9. Turtle</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang9">
 				</div>
 				<label class="col-sm-2 control-label">10. Lingo</label>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" placeholder="Answer Here">
-				</div>
+					<input type="text" class="form-control" placeholder="Answer Here" ng-model="translateText.quizToLang10"> -->
 				<button type="button" class="btn btn-success">Submit</button>
 			</div>
 		</form>

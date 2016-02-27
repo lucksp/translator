@@ -35,8 +35,54 @@ angular.module('translateApp')
  
 	]
 
+	var quizWords = [
+
+	{
+		word : 'Monkey',
+		id : 'en'
+	},
+	{
+		word : 'Discuss',
+		id : 'en'
+	},
+	{
+		word :'Code',
+		id : 'en'
+	},
+	{
+		word : 'Stupid',
+		id : 'en'
+	},
+	{
+		word : 'Defer',
+		id : 'en'
+	},
+	{
+		word : 'Zealous',
+		id : 'en'
+	},
+	{
+		word : 'Tact',
+		id : 'en'
+	},
+	{
+		word : 'Frustrate',
+		id : 'en'
+	},
+	{
+		word : 'Turtle',
+		id : 'en'
+	},
+	{
+		word : 'Beer',
+		id : 'en'
+	}
+ 
+	]
+
 	return {
-		languageCodes : languageCodes
+		languageCodes : languageCodes,
+		quizWords 	: quizWords
 	}
 	}])
 
